@@ -4,5 +4,4 @@ models/*.joblib
 *.ipynb_checkpoints/
 .env
 .env/
-data/*.csv
 *.pyc
