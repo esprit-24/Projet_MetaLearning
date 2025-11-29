@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meta-Learning Occupancy Prediction</title>
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        >
+
+        <style>
+            body {
+                background: linear-gradient(135deg, #1e3c72, #2a5298);
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .card {
+                border-radius: 18px;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            }
+
+            h3 {
+                font-weight: 600;
+            }
+
+            label {
+                font-weight: 500;
+            }
+
+            .form-control {
+                border-radius: 10px;
+            }
+
+            .btn-custom {
+                background-color: #1e3c72;
+                color: white;
+                font-weight: 600;
+                border-radius: 12px;
+                transition: 0.3s;
+            }
+
+            .btn-custom:hover {
+                background-color: #16345e;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="card p-4 col-md-6 mx-auto bg-white">
+                <h3 class="text-center mb-4">🔍 Prédiction d’Occupation (Meta-Learning)</h3>
+
+                <form action="/predict" method="post">
+
+                    <div class="mb-3">
+                        <label class="form-label">Time Index</label>
+                        <input type="number" step="1" class="form-control" name="Time_Index"
+                            placeholder="Ex : 1500"
+                            required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Température (°C)</label>
+                        <input type="number" step="0.01" class="form-control" name="Temperature"
+                            placeholder="Ex : 23.15"
+                            required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Humidité (%)</label>
+                        <input type="number" step="0.01" class="form-control" name="Humidity"
+                            placeholder="Ex : 30.50"
+                            required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Éclairage (Light)</label>
+                        <input type="number" step="1" class="form-control" name="Light"
+                            placeholder="Ex : 350"
+                            required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">CO₂ (ppm)</label>
+                        <input type="number" step="1" class="form-control" name="CO2"
+                            placeholder="Ex : 800"
+                            required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Humidity Ratio</label>
+                        <input type="number" step="0.000001" class="form-control" name="HumidityRatio"
+                            placeholder="Ex : 0.004621"
+                            required>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-custom px-4 py-2">
+                            🚀 Lancer la Prédiction
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
